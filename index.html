@@ -80,29 +80,33 @@
     }
 
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        background: var(--accent1);
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        display: none;
-        padding: 20px 0;
-      }
+  nav ul {
+    flex-direction: column;
+    background: var(--accent1);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
 
-      nav ul.active {
-        display: flex;
-      }
+    /* 🔥 BURASI YENİ 🔥 */
+    max-height: 70vh;
+    overflow-y: auto;
+  }
 
-      .menu-toggle {
-        display: flex;
-      }
+  nav ul.active {
+    display: flex;
+  }
 
-      nav {
-        position: relative;
-      }
-    }
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: relative;
+  }
+}
 
     section {
       padding: 60px 20px;
