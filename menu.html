@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown Menü</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0">
+          <span class="font-bold text-xl text-blue-600">LOGO</span>
+        </div>
+
+        <!-- Masaüstü Menü -->
+        <div class="hidden md:flex items-center space-x-6 relative">
+          <a href="#" class="text-gray-700 hover:text-blue-600">Anasayfa</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600">Hakkımızda</a>
+
+          <!-- Projeler Dropdown -->
+          <div class="relative group">
+            <button class="text-gray-700 hover:text-blue-600 focus:outline-none">
+              Projeler
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 z-50">
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Web Sitesi</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mobil Uygulama</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">E-Ticaret</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Kurumsal Kimlik</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Markalaşma</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sosyal Medya</a>
+            </div>
+          </div>
+
+          <a href="#" class="text-gray-700 hover:text-blue-600">İletişim</a>
+        </div>
+
+        <!-- Hamburger (Mobil) -->
+        <div class="flex items-center md:hidden">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobil Menü -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow-md space-y-2">
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Anasayfa</a>
+      <a href="#" class="block text-gray-700 hover:text-blue-600">Hakkımızda</a>
+
+      <!-- Projeler Alt Menüsü -->
+      <details class="block">
+        <summary class="cursor-pointer text-gray-700 hover:text-blue-600 py-2">Projeler</summary>
+        <div class="pl-4 space-y-1">
+          <a href="#" class="block text-gray-600 hover:text-blue-600">Web Sitesi</a>
+          <a href="#" class="block text-gray-600 hover:text-blue-600">Mobil Uygulama</a>
+          <a href="#" class="block text-gray-600 hover:text-blue-600">E-Ticaret</a>
+          <a href="#" class="block text-gray-600 hover:text-blue-600">Kurumsal Kimlik</a>
+          <a href="#" class="block text-gray-600 hover:text-blue-600">Markalaşma</a>
+          <a href="#" class="block text-gray-600 hover:text-blue-600">Sosyal Medya</a>
+        </div>
+      </details>
+
+      <a href="#" class="block text-gray-700 hover:text-blue-600">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- Sayfa İçeriği -->
+  <main class="p-8 text-center text-gray-800">
+    <h1 class="text-3xl font-bold mb-4">Responsive Menü + Dropdown</h1>
+    <p class="text-lg">Masaüstü için hover'lı, mobil için accordion yapılı alt menüler içerir.</p>
+  </main>
+
+  <!-- JS -->
+  <script>
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+<div class="container">
+  <h1>FormSubmit Demo</h1>
+  <form target="_blank" action="https://formsubmit.co/alicihan.93@gmail.com" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
+</div>
+</body>
+</html>
