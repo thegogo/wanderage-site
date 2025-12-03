@@ -1,0 +1,110 @@
+/*-----------------------------------------------------------------------------------
+
+    Project Name: Aivora - AI Agency & Technology HTML Template
+    Author: XpressBuddy -->> (https://themeforest.net/user/xpressbuddy)
+    Support: support@xpressbuddy.com
+    Description: Aivora - AI Agency & Technology HTML Template
+    Developer: Mohammad Wasim Mia -> contact@xpressbuddy.com
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ==================
+    
+	01. Theme default CSS
+    02. header
+    03. global
+    04. hero
+    05. feature
+    06. about
+    07. service
+    08. team
+    09. testimonial
+    10. contact
+    11. blog
+    12. bramd
+    13. pricing
+    14. project
+    15. cta
+    16. funfact
+    17. marquee
+    18. process
+    19. banner
+    20. portfolio
+    21. accordion
+    22. mission
+    23. career
+    24. shop
+    25. breadcrumb
+    26. sidebar
+    27. backtotop
+    28. sec-title
+    29. search
+    30. mobile-menu
+    31. 404
+    32. preloader
+    
+
+-----------------------------------------------------------------------------------*/
+// abstracts scss
+@import
+    'abstracts/variables',
+    'abstracts/mixins';
+
+// base scss
+@import 
+    'base/fonts',
+    'base/base',
+    'base/spacing',
+    'base/typography',
+    'base/animation',
+    'base/overlay';
+
+// layout scss
+@import 
+    'layout/header',
+    'layout/navigation';
+ 
+// components scss
+@import    
+    'components/brand',
+    'components/industries',
+    'components/project',
+    'components/process',
+    'components/pricing',
+    'components/integration',
+    'components/integration',
+    'components/download',
+    'components/award',
+    'components/career',
+    'components/funfact',
+    'components/sec-title',
+    'components/about',
+    'components/service',
+    'components/feature',
+    'components/team',
+    'components/details',
+    'components/video',
+    'components/cta',
+    'components/testimonial',
+    'components/blog',
+    'components/faq',
+    'components/contact',
+    'components/sidebar',
+    'components/global',
+    'components/hero',
+    'components/breadcrumb',
+    'components/buttons',
+    'components/backtotop',
+    'components/mobile-menu',
+    'components/preloader';
+
+// home scss
+
+
+// layout scss
+@import
+    'layout/footer';
+ 
+

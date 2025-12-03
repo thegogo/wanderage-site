@@ -1,0 +1,85 @@
+/*----------------------------------------*/
+/*  22. breadcrumb
+/*----------------------------------------*/
+.breadcrumb {
+    min-height: 500px;
+    padding: 150px 0 100px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+    @include respond(md) {
+        min-height: 380px;
+        padding: 140px 0 100px;
+    }
+    @include respond(xs) {
+        min-height: 360px;
+        
+    }
+    &__content {
+        text-align: center;
+    }
+    &__list {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            left: -16px;
+            top: 0;
+            height: 8px;
+            width: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-primary);
+            @include border-radius(100px);
+        }
+        &::after {
+            left: auto;
+            right: -16px;
+        }
+    }
+    .breadcrumb-item {
+        color: var(--color-white);
+        text-transform: capitalize;
+        a {
+            color: currentColor;
+        }
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 65px;
+        margin-top: 24px;
+        letter-spacing: -0.07em;
+        color: var(--color-white);
+        font-family: var(--font-heading);
+        @include respond(lg) {
+            font-size: 52px;
+        }
+        @include respond(md) {
+            font-size: 45px;
+            margin-top: 15px;
+        }
+        @include respond(xs) {
+            font-size: 34px;
+            
+            margin-top: 10px;
+        }
+        @include respond(sm) {
+            font-size: 36px;
+        }
+    }
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	float: left;
+	padding-right: 0;
+	color: rgba(255, 255, 255, 0.75);
+	content: var(--bs-breadcrumb-divider, "/");
+}
+.breadcrumb-item + .breadcrumb-item::after {
+	float: left;
+	padding-right: var(--bs-breadcrumb-item-padding-x);
+	color: rgba(255, 255, 255, 0.75);
+	content: var(--bs-breadcrumb-divider, "/");
+}

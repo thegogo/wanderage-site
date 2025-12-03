@@ -1,0 +1,129 @@
+.xb-blog-item {
+    .xb-item {
+        &--inner {
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(40px);
+            @include border-radius(10px);
+            box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+            background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                background-image: url(../img/testimonial/noise.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        &--holder {
+            padding: 25px 100px 20px 30px;
+            @include respond(xs) {
+                padding: 25px 20px 20px;
+            }
+        }
+        &--title {
+            font-size: 22px;
+            margin-top: 15px;
+            line-height: 145%;
+            letter-spacing: -0.01em;
+            color: var(--color-white);
+            @include respond(lg) {
+                font-size: 20px;
+            }
+            a {
+                color: currentColor;
+            }
+        }
+        &--meta {
+            gap: 20px;
+            @include respond(lg) {
+                gap: 15px;
+            }
+            @include respond(md) {
+                gap: 16px;
+            }
+            @include respond(xs) {
+                gap: 15px;
+            }
+            @include respond(sm) {
+                gap: 20px;
+            }
+            li {
+                font-weight: 600;
+                font-size: 16px;
+                color: #86878d;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                position: relative;
+                padding-right: 20px;
+                @include respond(lg) {
+                    font-size: 12px;
+                    padding-right: 15px;
+                }
+                @include respond(md) {
+                    font-size: 14px;
+                    padding-right: 16px;
+                }
+                @include respond(xs) {
+                    padding-right: 15px;
+                }
+                @include respond(sm) {
+                    padding-right: 20px;
+                }
+                img {
+                    margin-right: 7px;
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    right: 0;
+                    top: 50%;
+                    width: 1px;
+                    height: 50%;
+                    background: #fff;
+                    transform: translateY(-50%);
+                }
+                &:last-child {
+                    padding-right: 0;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &.xb-small-blog-item {
+        .xb-item--holder {
+            padding: 25px 20px 20px 30px;
+            @include respond(md) {
+                padding: 20px 20px;
+            }
+            @include respond(xs) {
+                padding: 25px 20px 20px;
+            }
+        }
+    }
+}
+.blog-sec-title {
+    .title {
+        img {
+            width: 134px;
+            margin-top: -20px;
+            margin-left: -18px;
+            @include respond(xs) {
+                z-index: -1;
+                position: relative;
+            }
+        }
+    }
+    @include respond(md) {
+        margin-bottom: 30px;
+    }
+}

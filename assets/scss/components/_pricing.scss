@@ -1,0 +1,153 @@
+.pricing-list {
+    li {
+        gap: 10px;
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        @include respond(xs) {
+            align-items: start;
+        }
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+    &--right {
+        li {
+            max-width: 245px;
+            @include respond(lg) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+.pricing-list-wrap {
+    gap: 15px;
+}
+.pricing-item {
+    padding: 50px;
+    position: relative;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    @include respond(lg) {
+        padding: 50px 30px;
+    }
+    &::after {
+        z-index: 1 !important;
+    }
+    .xb-dollar {
+        font-size: 44px;
+        margin: 15px 0 25px;
+        letter-spacing: -0.02em;
+        sub {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0em;
+            margin-left: -12px;
+            bottom: -0.0em;
+        }
+    }
+    .xb-icon {
+        margin: -25px 0 0 -28px;
+    }
+    .pricing-btn {
+        a {
+            width: 100%;
+            padding: 16.3px 10px;
+        }
+    }
+    .xb-tag {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        font-weight: 500;
+        padding: 0 12px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        @include border-radius(5px);
+        backdrop-filter: blur(40px);
+        box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+        background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+        @include respond(xs) {
+            right: 30px;
+        }
+        &::after {
+            @include border-radius(5px);
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+            background-image: url(../img/pricing/tag-noise.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    .premium-plan {
+        padding: 0 10px;
+        @include border-radius(5px);
+        color: var(--color-secondary);
+        background: var(--color-primary);
+    }
+    .xb-price-chagne-btn {
+        p {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 700;
+        }
+    }
+    .toggle {
+        width: 49px;
+        height: 24px;
+        position: relative;
+        @include border-radius(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        &::before {
+            position: absolute;
+            content: '';
+            height: 20px;
+            width: 20px;
+            top: 1px;
+            left: 2px;
+            @include border-radius(12px);
+            background: var(--color-primary);
+            @include transition(.3s);
+        }
+        &.active {
+            &::before {
+                left: 25px;
+            }
+        }
+    }
+}
+.pricing-sec-title {
+    .title {
+        @include respond(md) {
+            line-height: 1;
+        }
+        img {
+            width: 90px;
+            transform: translateY(-22px);
+            @include respond(md) {
+                width: 65px;
+                transform: translateY(-14px);
+            }
+            @include respond(xs) {
+                width: 60px;
+                transform: translateY(-6px);
+            }
+        }    
+    }   
+}
+.pricing-btn {
+    @include respond(xs) {
+        margin-top: 30px;
+    }
+}

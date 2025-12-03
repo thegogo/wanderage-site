@@ -1,0 +1,146 @@
+.xb-team-item {
+    z-index: 1;
+    position: relative;
+    min-height: 223px;
+    padding: 30px 20px 20px 30px;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    background: linear-gradient(209deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    @include respond(sm) {
+        padding: 30px 20px 20px;
+    }
+    .xb-item {
+        &--img {
+            width: 85px;
+            height: 98px;
+            img {
+                overflow: hidden;
+                transform: scale(1);
+                @include transition(.3s);
+                @include border-radius(10px);
+                transform-origin: bottom left;
+            }
+        }
+        &--holder {
+            margin-top: 22px;
+        }
+        &--name {
+            font-size: 18px;
+            letter-spacing: -0.04em;
+            text-transform: capitalize;
+        }
+        &--desig {
+            font-size: 16px;
+        }
+        &--desig span {
+            color: var(--color-primary);
+        }
+        &--social {
+            height: 40px;
+            width: 40px;
+            @include center;
+            @include transition(.3s);
+            @include border-radius(100px);
+            background: var(--color-secondary);
+            i {
+                color: var(--color-white);
+                @include transition(.3s);
+            }
+            &::after {
+                z-index: 1;
+                border-radius: inherit;
+            }
+        }
+    }
+    .xb-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+    }
+    &:hover {
+        .xb-item {
+            &--img img {
+                transform: scale(1.63);
+            }
+            &--social {
+                background: var(--color-primary);
+                i {
+                    color: var(--color-secondary);
+                }
+            }
+        }
+    }
+}
+.xb-team-item-big {
+    padding: 50px;
+    @include respond(lg) {
+        padding: 30px;
+    }
+    .xb-item {
+        &--img {
+            width: 100%;
+            height: 100%;
+            @include respond(md) {
+                width: 50%;
+                height: 50%;
+            }
+            @include respond(xs) {
+                width: 35%;
+                height: 35%;
+            }
+        }
+        &--name {
+            font-size: 32px;
+            @include respond(lg) {
+                font-size: 26px;
+            }
+            @include respond(xs) {
+                font-size: 22px;
+            }
+        }
+        &--desig {
+            font-size: 17px;
+            @include respond(xs) {
+                font-size: 16px;
+            }
+        }
+        &--holder {
+            gap: 20px;
+            align-items: end;
+            @include respond(xs) {
+                align-items: center;
+            }
+        }
+        &--social {
+            height: 84px;
+            width: 84px;
+            @include respond(lg) {
+                height: 74px;
+                width: 74px;
+            }
+            @include respond(xs) {
+                height: 54px;
+                width: 54px;
+            }
+            i {
+                font-size: 32px;
+                @include respond(lg) {
+                    font-size: 24px;
+                }
+                @include respond(xs) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &:hover {
+        .xb-item {
+            &--img img {
+                transform: scale(1.4);
+            }
+        }
+    }
+}

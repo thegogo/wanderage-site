@@ -1,0 +1,272 @@
+.about-top-image {
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    @include respond(lg) {
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    @include respond(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    & > div {
+        @include respond(xs) {
+            width: 100%;
+        }
+        @include respond(sm) {
+            width: 48%;
+        }
+    }
+    .xb-img {
+        a img {
+            @include respond(xs) {
+                height: 200px;
+            }
+        }
+    }
+}
+.xb-about-img-wrap {
+    padding: 48px 0 7px;
+    display: inline-block;
+}
+.xb-about-img-item {
+    overflow: hidden;
+    @include border-radius(500px);
+    @include respond(laptop) {
+        width: 550px;
+        
+    }
+    @include respond(lg) {
+        width: 450px;
+    }
+    @include respond(md) {
+        width: 350px;
+    }
+    @include respond(xs) {
+        width: 250px;
+    }
+}
+.about-sec-title {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    @include respond(lg) {
+        gap: 10px;
+        flex-direction: column;
+    }
+    .title {
+        font-size: 52px;
+        line-height: 1.5;
+        max-width: 874px;
+        @include  respond(xs) {
+            font-size: 36px;
+        }
+        span {
+            position: relative;
+            display: inline-block;
+            img {
+                z-index: -1;
+            }
+            &:nth-child(1){
+                width: 58px;
+                height: 57px;
+                img {
+                    position: absolute;
+                    left: -10px;
+                    top: 8px;
+                    max-width: 180%;
+                }
+            }
+            &:nth-child(2){
+                width: 116px;
+                height: 80px;
+                margin-top: -20px;
+                @include respond(xs) {
+                    width: 100px;
+                    height: 62px;
+                }
+                img {
+                    position: absolute;
+                    top: -5px;
+                    left: 5px;
+                }
+            }
+            &:nth-child(3){
+                width: 326px;
+                height: 50px;
+                overflow: hidden;
+                left: 20px;
+                top: 6px;
+                @include border-radius(100px);
+                @include respond(xs) {
+                    width: 160px;
+                    left: 10px;
+                    top: 15px;
+                }
+                @include respond(sm) {
+                    width: 326px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.about-top-image {
+    .xb-img {
+        overflow: hidden;
+        @include border-radius(10px);
+    }
+    .xb-video {
+        max-width: 242px;
+        height: 213px;
+        overflow: hidden;
+        @include border-radius(10px);
+        @include respond(lg) {
+            max-width: 183px;
+        }
+        @include respond(md) {
+            height: 150px;
+            max-width: 124px;
+        }
+        @include respond(xs) {
+            height: 200px;
+            max-width: 100%;
+        }
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.about-sec-title-two {
+    display: block;
+    text-align: center;
+    .title {
+        margin: 0 auto;
+        max-width: 970px;
+        span:nth-child(3) {
+            width: 297px;
+            left: 0;
+            @include respond(sm) {
+                width: 260px;
+            }
+        }
+    }
+    .content {
+        max-width: 911px;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+.about-bg {
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+    z-index: -1;
+    @include respond(md) {
+        bottom: 21%;
+    }
+}
+.ai-about-wrap {
+    min-height: 607px;
+    background: #11121d;
+    position: relative;
+    z-index: 1;
+    @include respond(xs) {
+        padding: 0 10px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url(../img/about/net-img.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .down-arrow {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+        display: flex;
+        gap: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        align-items: center;
+        text-transform: uppercase;
+        color: var(--color-white);
+    }
+}
+.ai-circle-img {
+    position: absolute;
+    left: 14.2%;
+    top: -350px;
+    z-index: -1;
+    animation: spin 70s linear infinite;
+    @media only screen and (max-width: 1600px) {
+        left: 7.2%;
+    }
+    @include respond(laptop) {
+        left: 0%;
+    }
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        top: -295px;
+    }
+    @include respond(lg) {
+        left: 0;
+        top: -144px;
+    }
+    @include respond(md) {
+        top: -42px;
+    }
+    @include respond(xs) {
+        display: none;
+    }
+}
+.ai-about-inner {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 175px;
+    @include respond(md) {
+        padding-top: 160px;
+    }
+    @include respond(xs) {
+        padding-top: 110px;
+    }
+    @include respond(sm) {
+        padding-top: 135px;
+    }
+    .sec-title-three {
+        .sub-title {
+           top: 31px;
+           left: 21px;
+           position: absolute;
+       }
+    }
+}
+.ai-about-bottom {
+    gap: 28px;
+    margin-top: 25px;
+    display: inline-flex;
+    @include respond(md) {
+        justify-content: center;
+    }
+    p {
+        font-size: 20px;
+        line-height: 30px;
+        max-width: 502px;
+        text-align: start;
+        
+    }
+}
+

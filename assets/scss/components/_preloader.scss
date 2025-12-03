@@ -1,0 +1,80 @@
+/*----------------------------------------*/
+/*  preloader
+/*----------------------------------------*/
+.preloader {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 999999;
+  background-color: var(--color-secondary); 
+}
+.preloader .loader-circle {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 160px;
+  height: 160px;
+  direction: ltr;
+  position: absolute;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+}
+
+.preloader .loader-line-mask {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 100px;
+  margin-left: -80px;
+  margin-top: -80px;
+  overflow: hidden;
+  transform-origin: 80px 80px;
+  animation: preloaderSpin 1.5s infinite linear; 
+}
+
+.preloader .loader-line {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(255, 255, 255, 0.44)',endColorStr='rgba(255, 255, 255, 0)');
+  background-color: initial;
+  position: relative; 
+}
+
+.preloader .loader-line:before {
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  z-index: 99;
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  background-color: var(--color-secondary); 
+}
+
+.preloader .loader-logo {
+  top: 50%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  transform: translate(0%, -50%); 
+}
+
+.preloader .loader-logo img {
+  max-width: 60%;
+}
+@keyframes preloaderSpin {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); 
+  } 
+}

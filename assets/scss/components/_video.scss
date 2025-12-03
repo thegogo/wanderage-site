@@ -1,0 +1,289 @@
+.xb-video-frame {
+    text-align: center;
+    .xb-img {
+        margin: 0 -77px;
+        @include respond(xs) {
+            margin: 0 -40px;
+        }
+        @include respond(sm) {
+            margin: 0px -47px;
+        }
+    }
+}
+.xb-video-wrap {
+    top: 14%;
+    left: 6.4%;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    @include border-radius(10px);
+    background: var(--color-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        max-width: 88%;
+    }
+    @include respond(lg) {
+        left: 6%;
+        max-width: 88%;
+    }
+    @include respond(md) {
+        left: 5%;
+        max-width: 90%;
+    }
+}
+.xb-video-nav {
+    padding-left: 50px;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    @include respond(md) {
+        padding-left: 40px;
+    }
+    @include respond(xs) {
+        padding-left: 0;
+    }
+    @include respond(sm) {
+        padding-left: 40px;
+    }
+}
+.xb-video-nav-item {
+    &:first-child {
+        .nav-link {
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    .nav-link {
+        gap: 7px;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+        color: var(--color-white);
+        @include border-radius(0);
+        @include transition(.3s);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            background: rgba(0, 255, 153, 0.2);
+        }
+        &.active {
+            background: transparent;
+            &::before {
+                opacity: 1;
+                animation: widthScale 3s linear infinite;
+            }
+        }
+        @include respond(md) {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+        @include respond(xs) {
+            gap: 5px;
+            font-size: 10px;
+            padding: 0px 5px;
+        }
+        @include respond(sm) {
+            gap: 7px;
+            font-size: 12px;
+            padding: 0 10px;
+        }
+    }
+}
+@keyframes widthScale {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.xb-video-shape {
+    .shape {
+        z-index: -1;
+        position: absolute;
+        @include respond(xs) {
+            display: none;
+        }
+        @include respond(sm) {
+            display: block;
+        }
+        &--1 {
+            top: 62px;
+            left: -14px;
+            transform: rotate(-45deg);
+            max-width: 10%;
+            img {
+                transform-origin: bottom;
+                animation: ring2 20s ease-out infinite;
+            }
+            @include respond(lg) {
+                left: -23px;
+                top: 54px;
+                max-width: 10%;
+            }
+            @include respond(md) {
+                left: -45px;
+                top: 33px;
+                max-width: 12%;
+            }
+            @include respond(sm) {
+                top: 5px;
+                left: -44px;
+                max-width: 18%;
+            }
+        }
+        &--2 {
+            left: -26px;
+            bottom: 26%;
+            @include respond(lg) {
+                left: -10px;
+                bottom: 30%;
+                max-width: 4%;
+            }
+            @include respond(md) {
+                left: -27px;
+            }
+            @include respond(sm) {
+                left: -14px;
+            }
+        }
+        &--3 {
+            right: 15px;
+            bottom: 21%;
+            @include respond(lg) {
+                right: 3px;
+                bottom: 22%;
+                max-width: 4%;
+            }
+            @include respond(md) {
+                right: -16px;
+            }
+            @include respond(sm) {
+                right: -13px;
+                bottom: 20%;
+                max-width: 7%;
+            }
+        }
+    }
+}
+.xb-linear-gradient {
+    .gradient {
+        position: absolute;
+        &--1 {
+            top: 0;
+            left: 0;
+            z-index: -2;
+            width: 100%;
+            height: 262px;
+            background: linear-gradient(180deg, rgba(0, 2, 15, 0) 0%, #00020f 100%);
+            @include respond(md) {
+                height: 170px;
+            }
+            @include respond(xs) {
+                height: 80px;
+            }
+        }
+        &--2 {
+            bottom: 57px;
+            width: 100%;
+            height: 161px;
+            background: #00020f;
+            filter: blur(40px);
+            @include respond(md) {
+                height: 100px;
+            }
+            @include respond(xs) {
+                height: 80px;
+            }
+        }
+        &--3 {
+            left: 0;
+            top: 44px;
+            height: 88.5%;
+            width: 199px;
+            background: #00020f;
+            filter: blur(95.30000305175781px);
+            @include respond(laptop) {
+                display: none;
+            }
+            @include respond(lg) {
+                display: none;
+            }
+        }
+        &--4 {
+            right: 0;
+            top: 44px;
+            height: 88.5%;
+            width: 199px;
+            background: #00020f;
+            filter: blur(95.30000305175781px);
+            @include respond(laptop) {
+                display: none;
+            }
+            @include respond(lg) {
+                display: none;
+            }
+        }
+        &--dot-img {
+            top: 97px;
+            left: 80px;
+            z-index: -2;
+        }
+    }
+}
+.xb-text-marquee-item {
+    display: flex;
+    align-items: center;
+    .title {
+        font-weight: 700;
+        font-size: 110px;
+        letter-spacing: -0.05em;
+        background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include respond(md) {
+            font-size: 80px;
+        }
+        @include respond(xs) {
+            font-size: 48px;
+        }
+    }
+    img {
+        margin: 0 10px;
+        display: inline-flex;
+        @include respond(xs) {
+            max-width: 50%;
+        }
+    }
+}
+.xb-text-marquee-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 150px;
+    z-index: -1;
+    @include respond(md) {
+        bottom: 80px;
+    }
+    @include respond(xs) {
+        bottom: 70px;
+    }
+    @include respond(sm) {
+        bottom: 90px;
+    }
+}
+.tab-content {
+    .tab-pane {
+        @include transition(.3s);
+    }
+}
+
+
+
+
