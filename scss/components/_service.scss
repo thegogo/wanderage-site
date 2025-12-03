@@ -1,0 +1,538 @@
+.xb-service-item {
+    flex: 1;
+    height: 920px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.6s ease;
+    backdrop-filter: blur(40px);
+    transform-origin: center;
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+    @include respond(laptop) {
+        height: 800px;
+    }
+    @include respond(lg) {
+        height: 670px;
+    }
+    @include respond(xs) {
+        height: 635px;
+        width: 100%;
+        flex: unset;
+    }
+    @include respond(sm) {
+        height: 810px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/service/noise.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &::after {
+        padding: 1px !important;
+        border-radius: 0 !important;
+    }
+    .xb-item {
+        &--item {
+            padding: 82px 85px 85px 92px;
+            @media only screen and (max-width: 1600px) {
+                padding: 82px 45px 85px;
+            }
+            @include respond(laptop) {
+                padding: 82px 50px 85px;
+            }
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                padding: 82px 30px 85px;
+            }
+            @include respond(lg) {
+                padding: 82px 30px 85px;
+            }
+            @include respond(xs) {
+                padding: 82px 20px 85px;
+            }
+        }
+        &--title {
+            font-size: 42px;
+            letter-spacing: -0.06em;
+            color: var(--color-white);
+            @include respond(laptop) {
+                max-width: 365px;
+            }
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                font-size: 38px;
+                max-width: 350px;
+            }
+            @include respond(lg) {
+                font-size: 30px;
+                max-width: 280px;
+            }
+            @include respond(md) {
+                max-width: 200px;
+            }
+            @include respond(xs) {
+                font-size: 26px;
+            }
+            @include respond(sm) {
+                font-size: 38px;
+                max-width: 100%;
+            }
+            a {
+                color: currentColor;
+            }
+        }
+        &--icon {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include center;
+            @include border-radius(100px);
+            background: var(--color-primary);
+            @include respond(lg) {
+                width: 45px;
+                height: 45px;
+                top: -5px;
+            }
+        }
+        &--head-item {
+            opacity: 0;
+            position: relative;
+            visibility: hidden;
+            display: block;
+            @include transition(.4s);
+            transform: translateY(30px);
+            @include respond(xs) {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+        &--content {
+            max-width: 446px;
+            margin: 15px 0 32px;
+            display: inline-block;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.4s);
+            transform: translateY(30px);
+            @include respond(xs) {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+        &--img {
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.4s);
+            transform: translateY(30px);
+            @include respond(xs) {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            img {
+                @include transition(.3s);
+            }
+        }
+    }
+    &.active {
+        flex: 3;
+        transition: all 0.6s ease;
+        @include respond(xs) {
+            width: 100%;
+            flex: unset;
+        }
+        .xb-item {
+            &--head-item,
+            &--content, 
+            &--img {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            &--head-item {
+                transition-delay: .3s;
+            }
+            &--content {
+                transition-delay: .4s;
+            }
+            &--img{
+                transition-delay: .5s;
+            }
+        }
+        .service-vertical-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+.xb-sec-padding {
+    margin-bottom: 55px;
+    @include respond(lg) {
+        margin-bottom: 80px;
+    }
+}
+.xb-service-wrap {
+    display: flex;
+    @include respond(xs) {
+        flex-wrap: wrap;
+    }
+}
+.service-vertical-text {
+    transition: all 0.3s ease;
+    @include respond(xs) {
+        display: none;
+    }
+    .xb-item--title {
+        top: 4%;
+        left: 11%;
+        width: 100%;
+        display: flex;
+        white-space: nowrap;
+        position: absolute;
+        text-align: center;
+        align-items: center;
+        transform: rotate(-90deg);
+        justify-content: flex-end;
+        transform-origin: bottom right;
+        transform: translateX(-50%) rotate(-90deg);
+        @include respond(laptop) {
+            left: 18%;
+        }
+        @include respond(lg) {
+            left: 16%;
+        }
+    }
+    .xb-icon {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        left: 50%;
+        bottom: 85px;
+        @include center;
+        @include border-radius(100px);
+        transform: translateX(-50%);
+        background: rgba(0, 2, 15, 0.2);
+        @include respond(lg) {
+            bottom: 65px;
+        }
+    }
+}
+.xb-ser-item {
+    position: relative;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+    &::after {
+        border-radius:(0px) !important;
+    }
+    .xb-item {
+        &--inner {
+            padding: 50px 50px;
+            @include respond(lg) {
+                padding: 50px 40px;
+            }
+            @include respond(md) {
+                padding: 50px 50px;
+            }
+            @include respond(xs) {
+                padding: 50px 30px;
+            }
+        }
+        &--title {
+            font-size: 36px;
+            color: var(--color-white);
+            @include respond(lg) {
+                font-size: 28px;
+            }
+            @include respond(md) {
+                font-size: 36px;
+            }
+            @include respond(xs) {
+                font-size: 25px;
+                max-width: 200px;
+            }
+            @include respond(sm) {
+                max-width: 100%;
+            }
+            a {
+                color: currentColor;
+            }
+        }
+        &--icon {
+            position: absolute;
+            right: 50px;
+            top: 50px;
+            height: 50px;
+            width: 50px;
+            @include center;
+            @include transition(.3s);
+            @include border-radius(100px);
+            background: var(--color-secondary);
+            @include respond(lg) {
+                width: 45px;
+                height: 45px;
+            }
+            @include respond(xs) {
+                top: 40px;
+                right: 30px;
+            }
+            svg rect {
+                @include transition(.3s);
+            }
+        }
+        &--content {
+            max-width: 446px;
+            margin: 5px 0 40px;
+            font-size: 16px;
+            line-height: 28px;
+            display: inline-block;
+            color: var(--color-white);
+            @include transition(.3s);
+            @include respond(lg) {
+                max-width: 360px;
+            }
+            @include respond(md) {
+                max-width: 446px;
+            }
+            @include respond(sm) {
+                max-width: 400px;
+            }
+        }
+        &--img {
+            overflow: hidden;
+            @include transition(.3s);
+            img {
+                @include transition(.3s);
+            }
+        }
+    }
+    &:hover {
+        .xb-item--icon {
+            background: var(--color-primary);
+            svg rect {
+                fill: var(--color-secondary);
+            }
+        }
+    }
+}
+.service-det-img {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 2, 15, 0.2);
+    }
+    .btn-video {
+        height: 82px;
+        width: 82px;
+        background: var(--color-white);
+        @include respond(xs) {
+            height: 52px;
+            width: 52px;
+        }
+        &::before {
+            display: block;
+            animation: pulse-border-small 1500ms ease-out infinite;
+        }
+        &::after {
+            animation: pulse-border 1500ms ease-out infinite;
+        }
+        span svg {
+            @include respond(xs) {
+                width: 17px;
+            }
+        }
+    }
+}
+.service-outcome-list {
+    gap: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    max-width: 830px;
+    @include respond(xs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    li {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 500;
+        color: var(--color-white);
+    }
+}
+.services-outcome-wrap {
+    p {
+        max-width: 1174px;
+    }
+}
+.service-gallary {
+    gap: 30px;
+    flex-wrap: nowrap;
+    @include respond(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.ai-img-content {
+    padding: 50px 30px 30px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    min-height: 234px;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    @include transition(.4s);
+    background: var(--color-secondary);
+    @include respond(laptop) {
+        padding: 50px 20px 20px;
+        min-height: 185px;
+    }
+    @include respond(lg) {
+        min-height: 120px;
+        padding: 45px 20px 20px;
+    }
+    @include respond(md) {
+        min-height: 200px;
+    }
+    @include respond(sm) {
+        min-height: 180px;
+        padding: 45px 10px 20px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        z-index: -1;
+        top: 20px;
+        height: 100%;
+        width: 100%;
+        background: #11121D;
+    }
+    .title {
+        font-size: 24px;
+        line-height: 1.4;
+        max-width: 250px;
+        margin-bottom: 6px;
+        letter-spacing: -0.1em;
+        @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+            font-size: 20px;
+            max-width: 210px;
+        }
+        @include respond(lg) {
+            font-size: 18px;
+            max-width: 210px;
+        }
+        @include respond(md) {
+            font-size: 22px;
+            max-width: 250px;
+        }
+        @include respond(xs) {
+            max-width: 230px;
+        }
+    }
+    .content {
+        line-height: 1.2;
+        @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+            max-width: 200px;
+        }
+        @include respond(sm) {
+            max-width: 200px;
+        }
+    }
+    .arrow {
+        height: 53px;
+        width: 53px;
+        @include center;
+        display: inline-flex;
+        border: 1px solid #262833;
+        @include border-radius(100px);
+        background: transparent;
+        @include transition(.3s);
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        @include respond(laptop) {
+            height: 43px;
+            width: 43px;
+            bottom: 25px;
+            right: 20px;
+        }
+        @include respond(lg) {
+            height: 40px;
+            width: 40px;
+            bottom: 20px;
+            right: 12px;
+        }
+        @include respond(md) {
+            right: 21px;
+        }
+        svg {
+            @include respond(lg) {
+                width: 21px;
+            }
+            rect {
+                @include transition(.3s);
+            }
+        }
+        &:hover {
+            background: var(--color-primary);
+            svg rect {
+                fill: var(--color-secondary);
+            }
+        }
+    }
+}
+.ai-service-heading {
+    gap: 25px;
+    .sec-title-three {
+        max-width: 975px;
+    }
+    .content {
+        max-width: 668px;
+        font-size: 20px;
+    }
+}
+.ai-service-img {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include respond(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(xs) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @include respond(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.ai-service-img-item {
+    z-index: 1;
+    position: relative;
+    &:hover {
+        .ai-img-content {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+}

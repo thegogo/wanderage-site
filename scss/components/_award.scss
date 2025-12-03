@@ -1,0 +1,160 @@
+.award-logo {
+    height: 180px;
+    width: 160px;
+    margin-bottom: 30px;
+    @include respond(lg) {
+        width: 140px;
+        height: 160px;
+    }
+    @media only screen and (max-width: 1023px) {
+        width: 120px;
+        height: 140px;
+        margin-bottom: 20px;
+    }
+    @include respond(xs) {
+        width: 90px;
+        height: 100px;
+    }
+    &::before {
+        background-image: url(../img/award/bg.png);
+    }
+    img {
+        @media only screen and (max-width: 1023px) {
+            max-width: 70%;
+        }
+        @include respond(xs) {
+            max-width: 60%;
+            
+        }
+    }
+}
+.integration-logo-wrap {
+    @media only screen and (max-width: 1023px) {
+        gap: 20px;
+    }
+}
+.award-gradiant {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 100px;
+    width: 100%;
+    background: var(--color-secondary);
+    filter: blur(40px);
+}
+.ai-award-wrap {
+    position: relative;
+    padding: 20px 21px 80px;
+    background: #11121d;
+    @include respond(xs) {
+        padding: 20px 10px 80px;
+    }
+    z-index: 1;
+    
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url(../img/award/net-img.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        background-position: center center;
+    }
+}
+.ai-award-item {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: space-between;
+    padding: 60px 30px 60px 37px;
+    background: var(--color-secondary);
+    @include respond(lg) {
+        padding: 60px 20px 60px;
+    }
+    @include respond(md) {
+        flex-wrap: wrap;
+    }
+    @include respond(xs) {
+        padding: 60px 10px 60px;
+    }
+    @include respond(sm) {
+        padding: 60px 30px 60px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        @include transition(.5s);
+        background: var(--color-primary);
+    }
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+    .xb-item {
+        &--title {
+            font-size: 30px;
+            line-height: 182%;
+            line-height: 1.5;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                font-size: 27px;
+            }
+            @include respond(lg) {
+                font-size: 26px;
+            }
+            @include respond(xs) {
+                font-size: 22px;
+            }
+            
+        }
+        &--details {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 156%;
+            line-height: 1.3;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                font-size: 17px;
+            }
+            @include respond(lg) {
+                text-align: end;
+                font-size: 17px;
+            }
+            @include respond(md) {
+                padding-left: 45px;
+            }
+            @include respond(xs) {
+                padding-left: 0;
+                text-align: start;
+            }
+            span {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+.xb-img-reveal-wrapper__inner {
+	transform: translate(100%, -25%);
+    img {
+        @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+            max-width: 50%;
+        }
+        @include respond(lg) {
+            max-width: 50%;
+        }
+    }
+}

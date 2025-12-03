@@ -1,0 +1,276 @@
+.xb-industries-item {
+    width: 259px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 25px 10px 30px;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+    @include respond(xs) {
+        width: 190px;
+    }
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/service/noise.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &:hover {
+        .xb-icon img {
+            transform-origin: top;
+            animation: ring 1.8s ease-out infinite;
+        }
+    }
+    .xb-icon {
+        height: 140px;
+        width: 140px;
+        @include center;
+        display: inline-flex;
+        margin-bottom: 25px;
+        @include border-radius(100px);
+        background: rgba(0, 2, 15, 0.5);
+        @include respond(xs) {
+            width: 100px;
+            height: 100px;
+        }
+        img {
+            @include respond(xs) {
+                width: 50%;
+            }
+        }
+    }
+    .xb-title {
+        font-size: 21px;
+        letter-spacing: -0.03em;
+        @include respond(xs) {
+            font-size: 18px;
+        }
+    }
+}
+.xb-industries-inner {
+    margin-right: 20px;
+}
+.xb-industries-marquee {
+    height: 590px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 118px;
+    @include respond(lg) {
+        margin-bottom: 55px;
+    }
+    @include respond(md) {
+        margin-bottom: 80px;
+    }
+    @include respond(xs) {
+        height: 420px;
+        margin-bottom: 95px;
+    }
+    @include respond(sm) {
+        height: 590px;
+    }
+}
+.xb-gardiant-shape {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 14.5%;
+    @include respond(md) {
+        left: 17.5%;
+    }
+    @include respond(xs) {
+        
+        left: 15px;
+        right: 15px;
+    }
+    @include respond(sm) {
+        left: 32px;
+    }
+}
+.xb-gardiant-shape-two {
+    position: absolute;
+    z-index: 2;
+    top: 119px;
+    left: 14.5%;
+    @include respond(md) {
+        left: 17.5%;
+    }
+    @include respond(xs) {
+        left: 0;
+    }
+    @include respond(sm) {
+        left: 32px;
+    }
+}
+.xb-indus-marquee-inner {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-90deg);
+}
+.xb-marquee-items {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+.xb-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    background: #121420;
+    padding: 2px 10px;
+    white-space: nowrap;
+    backdrop-filter: blur(40px);
+    @include border-radius(100px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    .tag {
+        background: #0c2627;
+        color: var(--color-primary);
+        &.tag-red {
+            color: #FC0159;
+            background: rgba(252, 1, 89, 0.1);
+        }
+    }
+    .number {
+        color: #2c32fe;
+        border: 1px solid #181daa;
+        &.number-red {
+            color: #FC0159;
+            border: 1px solid #FC0159;
+        }
+    }
+    span {
+        font-weight: 600;
+        font-size: 11px;
+        padding: 0px 10px;
+        line-height: 22px;
+        display: inline-block;
+        text-transform: uppercase;
+        @include border-radius(11px);
+        &:nth-child(1) {
+            margin-right: 5px;
+        }
+        &:nth-child(2) {
+            margin-right: 14px;
+        }
+    }
+    p {
+        font-size: 13px;
+        display: ruby;
+    }
+}
+.xb-industries-logo {
+    @include respond(lg) {
+        max-width: 73%;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: 1023px) {
+        max-width: 75%;
+    }
+    @include respond(md) {
+        max-width: 52%;
+    }
+    @include respond(xs) {
+        max-width: 90%;
+    }
+}
+.indu-shape {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -13px;
+    transform: translateX(-50%);
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        bottom: -4px;
+    }
+    @include respond(lg) {
+        bottom: -1px;
+    }
+    @include respond(md) {
+        bottom: 12px;
+    }
+    @include respond(xs) {
+        left: 0px;
+        bottom: 18px;
+        transform: translateX(20px);
+    }
+    @include respond(sm) {
+        
+        bottom: 2px;
+        transform: translateX(40px);
+    }
+    img {
+        @include respond(xs) {
+            max-width: 90%;
+        }
+        @include respond(sm) {
+            max-width: 86%;
+        }
+    }
+}
+.xb-gradiant-line {
+    span {
+        position: absolute;
+        height: 780px;
+        width: 1px;
+        z-index: -1;
+        background: linear-gradient(0deg, rgba(0, 164, 175, 0) 0%, rgba(0, 255, 151, 0.5) 50%, rgba(0, 164, 175, 0) 100%);
+        @include respond(xs) {
+            display: none;
+        }
+        &:nth-child(1) {
+            left: 8%;
+            top: 25px;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                top: 18%;
+            }
+            @include respond(md) {
+                top: 20%;
+                left: 5%;
+            }
+        }
+        &:nth-child(2){
+            top: 21%;
+            left: 18%;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                top: 30%;
+            }
+            @include respond(md) {
+                top: 35%;
+                left: 14%;
+            }
+        }
+        &:nth-child(3){
+            top: 25px;
+            right: 8%;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                top: 18%;
+            }
+            @include respond(md) {
+                top: 20%;
+                right: 5%;
+            }
+        }
+        &:nth-child(4){
+            top: 26%;
+            right: 18%;
+            @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+                top: 30%;
+            }
+            @include respond(md) {
+                top: 35%;
+                right: 14%;
+            }
+        }
+    }
+}

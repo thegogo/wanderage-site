@@ -1,0 +1,130 @@
+.download-sec-title {
+    max-width: 550px;
+    @include respond(laptop) {
+        max-width: 480px;
+    }
+    @include respond(lg) {
+        max-width: 550px;
+    }
+    @include respond(md) {
+        max-width: 100%;
+    }
+}
+.ai-download-book-list {
+    width: calc(100% - 395px);
+    @include respond(laptop) {
+        width: calc(100% - 310px);
+    }
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        width: calc(100% - 255px);
+    }
+    @include respond(lg) {
+        width: calc(100% - 360px);
+    }
+    @include respond(md) {
+        width: calc(100% - 285px);
+    }
+    @include respond(xs) {
+        width: 100%;
+    }
+    .list {
+        a {
+            font-size: 15px;
+            line-height: 1.3;
+            color: #161616;
+            display: flex;
+            align-items: center;
+            padding: 24px 20px 24px 30px;
+            justify-content: space-between;
+            background: var(--color-white);
+            @include transition(.3s);
+            @include respond(xs){
+                padding: 24px 15px;
+            }
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid #E8E8E8;
+        }
+        &.current a {
+            background: var(--color-primary);
+        }
+    } 
+}
+.ai-download-book {
+    .book-item {
+        position: absolute;
+        left: 8%;
+        bottom: 0;
+        opacity: 0;
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left top;
+        @media only screen and (max-width: 1600px) {
+            left: 12%;
+        }
+        @include respond(laptop) {
+            left: 12%;
+        }
+        @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+            left: 5%;
+        }
+        @include respond(lg) {
+            left: 8%;
+        }
+        @include respond(md) {
+            left: 5%;
+        }
+        @include respond(xs) {
+            top: 0;
+            left: 20%;
+        }
+        @include respond(sm) {
+            left: 30%;
+        }
+        &.active {
+            opacity: 1;
+            transform: scaleX(1);
+            @include transition(.4s);
+        }
+    }
+}
+.ai-download-wrap {
+    gap: 90px;
+    @media only screen and (max-width: 1600px) {
+        flex-wrap: nowrap;
+    }
+    @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+        gap: 20px;
+    }
+    @include respond(lg) {
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+}
+.ai-download-inner {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    background: #11121d;
+    justify-content: end;
+    width: calc(100% - 640px);
+    @include respond(laptop) {
+        width: calc(100% - 480px);
+    }
+    @include respond(lg) {
+        width: 100%;
+    }
+    @include respond(xs) {
+        padding-top: 200px;
+    }
+    .bg-shape {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+}

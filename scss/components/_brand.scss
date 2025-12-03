@@ -1,0 +1,259 @@
+.xb-brand-wrap {
+    position: relative;
+    text-align: center;
+    padding: 20px 30px 55px;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    background: linear-gradient(215deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/service/noise.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+.xb-brand-item {
+    @include transition(.3s);
+    @include respond(xs) {
+        max-width: 105px;
+    }
+    &:hover {
+        opacity: 0.5;
+    }
+}
+.xb-brand-inner {
+    gap: 80px;
+    margin-right: 80px;
+    @include respond(xs) {
+        gap: 40px;
+        margin-right: 40px;
+    }
+}
+.brand-marquee {
+    overflow: hidden;
+}
+.brand-sub-title {
+    padding: 6px 39px;
+    text-align: center;
+    position: relative;
+    display: inline-block; 
+    @include border-radius(7px);
+    transform: translateY(-42px);
+    backdrop-filter: blur(40px);
+    background: rgb(11, 35, 54);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    @include respond(xs) {
+        transform: translateY(-67px);
+    }
+    @include respond(sm) {
+        transform: translateY(-42px);
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/brand/noise.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0 16px;
+        position: relative;
+        display: inline-block;
+        letter-spacing: -0.01em;
+        color: var(--color-white);
+        text-transform: capitalize;
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 50%;
+            height: 8px;
+            width: 8px;
+            transform: translateY(-50%);
+            @include border-radius(100%);
+            background: var(--color-primary);
+        }
+        &::before {
+            left: auto;
+            right: 0;
+        }
+        span {
+            color: var(--color-primary);
+        }
+    }
+}
+.ac-brand-marquee {
+    padding: 36px 0;
+    background: #00020f;
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(0, 2, 15, 0.01) 0%, rgba(255, 255, 255, 0.3) 52.02%, rgba(0, 2, 15, 0.01) 100%);
+    }
+    &::after {
+        top: auto;
+        bottom: 0;
+    }
+}
+.ac-brand-inner {
+	gap: 60px;
+	margin-right: 60px;
+    .xb-brand-item {
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        } 
+    }
+}
+.brand-sec-title {
+    .sub-title {
+        span {
+            color: var(--color-primary);
+        }
+    }
+}
+.ai-brand-heading {
+    gap: 30px;
+    flex-wrap: nowrap;
+    @include respond(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .title {
+        max-width: 900px;
+    }
+}
+.ai-brand-wrap {
+    min-height: 772px;
+    margin-bottom: 50px;
+}
+.ai-brand-content {
+    max-width: 710px;
+    min-height: 772px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    padding: 45px 30px 50px;
+    backdrop-filter: blur(40px);
+    background: rgba(17, 18, 29, 0.1);
+    @include respond(md) {
+        max-width: 490px;
+    }
+    @include respond(xs) {
+        padding: 45px 5px 50px;
+    }
+    @include respond(sm) {
+        max-width: 420px;
+        padding: 45px 20px 50px;
+    }
+    &::before { 
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/brand/noise02.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .content {
+        font-size: 23px;
+        line-height: 30px;
+    }
+}
+.ai-brand-inner {
+    margin-top: 40px;
+    padding: 65px 0 75px;
+    border-top: 1px solid rgba(232, 232, 232, 0.2);
+}
+.ai-brand-list {
+    width: 50%;
+    li {
+        a {
+            font-size: 17px;
+            padding: 8px 0;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include transition(.3s);
+            color: rgba(232, 232, 232, 0.2);
+            border-bottom: 1px solid rgba(232, 232, 232, 0.2);
+            &::before {
+                position: absolute;
+                content: '';
+                right: 0;
+                top: 50%;
+                height: 6px;
+                width: 6px;
+                @include transition(.3s);
+                transform: translateY(-50%);
+                background: rgba(232, 232, 232, 0.2);
+            }
+            svg {
+                opacity: 0;
+                @include transition(.3s);
+            }
+        }
+        &.current a {
+            color: var(--color-white);
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+.ai-brand-logo {
+    width: 50%;
+    padding-top: 14px;
+    li {
+        display: none;
+        img {
+            transition: 0.5s;
+            @include respond(lg) {
+                max-width: 55%;
+            }
+        }
+        &.active {
+            display: block;
+        }
+    }
+}
+.background_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

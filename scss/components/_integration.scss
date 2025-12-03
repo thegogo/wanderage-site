@@ -1,0 +1,185 @@
+.integration-list {
+    li {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+.integration-logo {
+    height: 110px;
+    width: 110px;
+    padding: 1px;
+    z-index: 1;
+    @include center;
+    margin-bottom: 20px;
+    position: relative;
+    @include transition(.3s);
+    @include border-radius(10px);
+    background: var(--color-secondary);
+    @include respond(xs) {
+        width: 60px;
+        height: 60px;
+    }
+    @include respond(sm) {
+        width: 90px;
+        height: 90px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url(../img/integration/bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include transition(.3s);
+    }
+    &::after {
+        opacity: 0;
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        filter: blur(15px);
+        @include transition(.3s);
+        background: linear-gradient(52deg, #2c32fe 0%, #00a4af 49%, #00ff97 100%);
+    }
+    img {
+        @include respond(xs) {
+            max-width: 65%;
+        }
+    }
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+.integration-logo-wrap {
+    gap: 30px;
+    overflow: hidden;
+    text-align: end;
+    position: relative;
+    max-height: 678px;
+    justify-content: end;
+    @include respond(md) {
+        justify-content: center;
+    }
+    @include respond(xs) {
+        max-height: 500px;
+    }
+    .xb-shape {
+        .shape {
+            position: absolute;
+            width: 110%;
+            height: 201px;
+            filter: blur(25px);
+            background: #00020f;
+            &--1 {
+                left: -30px;
+                top: -90px;
+                @include respond(xs) {
+                    left: -17px;
+                }
+            }
+            &--2 {
+                bottom: -52px;
+                left: -30px;
+                @include respond(xs) {
+                    left: -17px;
+                }
+            }
+        }
+    }
+}
+.comparison-list {
+    @include border-radius(10px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    &::after {
+        z-index: 1 !important;
+    }
+    .xb-item {
+        &--title {
+            padding: 13px 0 6px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            background: #15192f;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        &--list {
+            position: relative;
+            padding: 45px 50px 50px;
+            @include respond(xs) {
+                padding: 45px 20px 50px;
+            }
+            li {
+                gap: 10px;
+                display: flex;
+                font-weight: 500;
+                align-items: center;
+                @include respond(lg) {
+                    align-items: start;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+                
+            }
+        }
+    }
+}
+.comparison-vs-logo {
+    z-index: 2;
+    top: 50%;
+    right: -40px;
+    height: 52px;
+    width: 52px;
+    font-weight: 700;
+    font-size: 18px;
+    @include center;
+    background: #060E50;
+    letter-spacing: -0.1em;
+    transform: translateY(-50%);
+    position: absolute !important;
+    @include border-radius(100%);
+    font-family: var(--font-heading);
+    @include respond(md) {
+        top: auto;
+        bottom: -40px;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &.xb-border::after {
+        @include border-radius(100%);
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+        background: radial-gradient(99.41% 174.01% at -2.12% 64.17%, rgb(0, 255, 151) 0%, rgb(0, 2, 15) 100%);
+    }
+}
+.comparison-container {
+    padding-top: 42px;
+}
+.integration-content {
+    @include respond(md) {
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,130 @@
+.xb-image-item {
+    .xb-img {
+        overflow: hidden;
+        @include border-radius(10px);
+    }
+}
+.career-gallary {
+    gap: 20px;
+    flex-wrap: nowrap;
+    @include respond(xs) {
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        justify-content: center;
+    }
+}
+.process-img {
+	text-align: end;
+	margin-right: -86px;
+    @include respond(laptop) {
+        margin-right: 0;
+    }
+    @include respond(lg) {
+        margin-right: 0;
+    }
+}
+// Filter Nav - Start
+.career-menu {
+    gap: 3px;
+    padding: 7px;
+    display: flex;
+    margin-bottom: 70px;
+    display: inline-flex;
+    justify-content: center;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    background: var(--color-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    button {
+        line-height: 1;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 16px 30px 13px;
+        @include transition(.3s);
+        @include border-radius(7px);
+        color: var(--color-white);
+        background-color: transparent;
+        &:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        &.active {
+            color: var(--color-secondary);
+            background-color: var(--color-primary);
+        }
+    }
+}
+// Filter  Nav - End
+
+// Filter items - start
+.xb-career-item {
+    padding: 50px;
+    width: 100%;
+    overflow: hidden;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    @include border-radius(10px);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 4px 24px -1px rgba(28, 9, 61, 0.2);
+    background: linear-gradient(209deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%);
+    @include respond(xs) {
+        padding: 50px 30px;
+    }
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .xb-item {
+        &--title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--color-white);
+            @media only screen and (max-width: 1023px) {
+                max-width: 600px;
+            }
+            @include respond(md) {
+                font-size: 24px;
+            }
+            @include respond(xs) {
+                font-size: 22px;
+            }
+            a {
+                color: currentColor;
+            }
+        }
+        &--holder {
+            gap: 83px;
+            @include respond(xs) {
+                gap: 30px;
+            }
+            li {
+                gap: 9px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                color: var(--color-white);
+                @include respond(xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+// Filter items - end
+
+.xb-video {
+        height: 600px;
+        overflow: hidden;
+        @include border-radius(10px);
+        @include respond(xs) {
+            height: 500px;
+        }
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
